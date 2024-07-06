@@ -16,9 +16,11 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import StorageIcon from '@mui/icons-material/Storage';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import FormatListNumberedIcon from '@mui/icons-material/FormatListNumbered';
 import {AddShoppingCart} from "@mui/icons-material";
+import PersonAddIcon from '@mui/icons-material/PersonAdd';
+import PlaylistAddIcon from '@mui/icons-material/PlaylistAdd';
 import {useNavigate} from "react-router-dom";
 
 const drawerWidth = 240;
@@ -109,13 +111,16 @@ export default function SideNav() {
         items:[
             {
                 desc : "Nueva Compra",
-                icon: "AddShoppingCart"
+                icon: "ShoppingCartIcon"
             },{
                 desc : "Agregar Producto",
-                icon: "StorageIcon"
+                icon: "PlaylistAddIcon"
             },{
                 desc : "Lista de Productos",
                 icon: "FormatListNumberedIcon"
+            },{
+                desc : "Alta de usuario",
+                icon: "PersonAddIcon"
             }]
     };
 
@@ -169,9 +174,10 @@ export default function SideNav() {
                                 >
                                 {
                                     {
-                                        'AddShoppingCart' : <AddShoppingCart onClick={()=> {navigate("/")}}/>,
-                                        'StorageIcon' : <StorageIcon onClick={()=> {navigate("/newProduct")}}/>,
-                                        'FormatListNumberedIcon' : <FormatListNumberedIcon onClick={()=> {navigate("/listProducts")}}/>
+                                        'ShoppingCartIcon' : <ShoppingCartIcon onClick={()=> {navigate("/")}}/>,
+                                        'PlaylistAddIcon' : <PlaylistAddIcon onClick={()=> {navigate("/newProduct")}}/>,
+                                        'FormatListNumberedIcon' : <FormatListNumberedIcon onClick={()=> {navigate("/listProducts")}}/>,
+                                        'PersonAddIcon' : <PersonAddIcon onClick={()=> {navigate("/newProduct")}}/>
                                     }[item.icon]
                                 }
 
