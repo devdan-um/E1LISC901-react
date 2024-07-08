@@ -7,12 +7,6 @@ import {useEffect, useState} from "react";
 
 function NewProduct(){
 
-    const producto = {
-        name: "desarmador",
-        sku: "DES123",
-        cantidad: 2
-    };
-
     const [response, setResponse] = useState(null);
     const [saved, setSaved] = useState(false);
     const [notificacion, setNotificacion] = useState({message:""});
@@ -22,8 +16,7 @@ function NewProduct(){
     }), [saved];
 
     function fetchApiStore(form) {
-        form.preventDefault()
-        //console.log('dentro');
+        form.preventDefault();
         console.log(form);
         console.log(form.target.elements.producto.value)
 
@@ -35,8 +28,9 @@ function NewProduct(){
 
         fetch('http://localhost:8181/api/products/save/product', {
             method: "POST",
+            mode: 'cors',
             body: JSON.stringify(request),
-            headers: {"Content-type": "application/json; charset=UTF-8"}
+            headers: {"Content-type": "application/json; charset=UTF-8", "Access-Control-Allow-Origin" : "*"}
         })
         .then(response => {
             if (response.ok && response.status === 201) {
@@ -71,7 +65,7 @@ return(
             <FormGroup className="form-box">
                 <TextField required id="producto" name="producto" label="Producto" variant="outlined"/>
                 <TextField required id="sku" name="sku" label="SKU"/>
-                <TextField required id="no-stock" name="noStock" label="Numero Stock" type="number"/>
+                <TextField required id="noStock" name="noStock" label="Numero Stock" type="number"/>
                 <FormControlLabel
                     control={<Checkbox defaultChecked/>}
                     label="Producto Disponible"
