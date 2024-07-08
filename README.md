@@ -26,8 +26,16 @@ Clonacion del repositorio
 $ git clone -b develop https://github.com/devdan-um/E1LISC901-react.git
 ```
 
-Lista de tareas despues de la clonacion
+Una vez clonado el repositorio en la rama develop, solo neceitan entrar al directorio raiz del repositorio clonado e instalar las dependencias definidas en el archivo package.json
 
-- [x] Crear una rama nueva a partir de la clonada
-- [ ] Generar su token en GitHub para poder enviar cambios al repositorio remoto
-- [ ] Mandar su primer commit para que su rama se suba a remoto
+```
+$ npm install
+```
+
+Terminando el proceso, corren el siguiente comando y deberian de tener comunicación con su otro servidor[Back]:
+```
+$ npm run dev
+```
+
+## Autores
+[<img src="https://github.com/devdan-um.png" width=115><br><sub><a href="https://github.com/devdan-um">Daniel Gomez</a></sub>](https://github.com/devdan-um)

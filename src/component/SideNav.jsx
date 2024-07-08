@@ -176,8 +176,8 @@ export default function SideNav() {
                                     {
                                         'ShoppingCartIcon' : <ShoppingCartIcon onClick={()=> {navigate("/")}}/>,
                                         'PlaylistAddIcon' : <PlaylistAddIcon onClick={()=> {navigate("/newProduct")}}/>,
-                                        'FormatListNumberedIcon' : <FormatListNumberedIcon onClick={()=> {navigate("/listProducts")}}/>,
-                                        'PersonAddIcon' : <PersonAddIcon onClick={()=> {navigate("/newProduct")}}/>
+                                        'FormatListNumberedIcon' : <FormatListNumberedIcon onClick={()=> {navigate("/")}}/>,
+                                        'PersonAddIcon' : <PersonAddIcon onClick={()=> {navigate("/")}}/>
                                     }[item.icon]
                                 }
 
