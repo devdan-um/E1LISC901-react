@@ -1,6 +1,15 @@
-import './FormProduct.css'
+import fetchApiStore from '../hooks/fetchApiStore.jsx'
+import {useState, useEffect} from "react";
 
 function FormProduct(){
+
+    const [saved, setSaved] = useState(false);
+
+
+    useEffect(() => {
+        document.title = `You clicked ${count} times`;
+    });
+
     return (
         <>
             <h2>Ingresa los datos para registrar un producto</h2>
@@ -21,7 +30,7 @@ function FormProduct(){
                         </label>
                     </div>
 
-                    <button type="submit">Guardar Producto</button>
+                    <button onClick={fetchApiStore}>Guardar Producto</button>
 
                 </div>
             </form>

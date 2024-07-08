@@ -10,6 +10,18 @@ Currently, two official plugins are available:
 
 
 Pasos para clonar el repositorio:
+
+:clock1: 10 minutos de tiempo estimado para ejecutar los siguientes pasos 
+
+> [!NOTE]
+> Aegurate de tener instalado git en tu equipo 
+ 
+
+Comando para verificar la version instalada de git
+```
+$ git --version
+```
+Clonacion del repositorio
 ```
 $ git clone -b develop https://github.com/devdan-um/E1LISC901-react.git
 ```
