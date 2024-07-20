@@ -1,4 +1,4 @@
-import fetchApiStore from '../hooks/fetchApiStore.jsx'
+import fetchStore from '../hooks/fetchStore.jsx'
 import {useState, useEffect} from "react";
 
 function FormProduct(){
@@ -30,7 +30,7 @@ function FormProduct(){
                         </label>
                     </div>
 
-                    <button onClick={fetchApiStore}>Guardar Producto</button>
+                    <button onClick={fetchStore}>Guardar Producto</button>
 
                 </div>
             </form>

@@ -4,6 +4,7 @@ import {Save} from "@mui/icons-material";
 import './NewProduct.css'
 import SideNav from "./SideNav.jsx";
 import {useEffect, useState} from "react";
+import fetchStore from "../hooks/fetchStore.jsx";
 
 function NewProduct(){
 
@@ -12,13 +13,13 @@ function NewProduct(){
     const [notificacion, setNotificacion] = useState({message:""});
 
     useEffect(() => {
-
+        console.log(saved);
+        console.log(response);
     }), [saved];
 
     function fetchApiStore(form) {
+
         form.preventDefault();
-        console.log(form);
-        console.log(form.target.elements.producto.value)
 
         const request = {
             name: form.target.elements.producto.value,
@@ -26,31 +27,9 @@ function NewProduct(){
             cantidad: form.target.elements.noStock.value
         };
 
-        fetch('http://localhost:8181/api/products/save/product', {
-            method: "POST",
-            mode: 'cors',
-            body: JSON.stringify(request),
-            headers: {"Content-type": "application/json; charset=UTF-8", "Access-Control-Allow-Origin" : "*"}
-        })
-        .then(response => {
-            if (response.ok && response.status === 201) {
-                console.log(response);
-                setSaved(true);
-                return response.json();
-            } else {
-                console.log('error al guardar el registro')
-                throw Error(response.statusText)
-            }
-        })
-        .then(json => {
-            setResponse(json)
-            setNotificacion(json.notificacion)
-            setTimeout(() => {
-                setSaved(false)
-            }, "5000");
+        const endpoint = 'http://localhost:8181/api/products/save/product';
+        fetchStore(request, endpoint, setSaved, setResponse, setNotificacion);
 
-        })
-        .catch(err => console.log(err))
         }
 
 return(
