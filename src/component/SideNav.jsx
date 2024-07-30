@@ -174,10 +174,10 @@ export default function SideNav() {
                                 >
                                 {
                                     {
-                                        'ShoppingCartIcon' : <ShoppingCartIcon onClick={()=> {navigate("/")}}/>,
+                                        'ShoppingCartIcon' : <ShoppingCartIcon onClick={()=> {navigate("/home")}}/>,
                                         'PlaylistAddIcon' : <PlaylistAddIcon onClick={()=> {navigate("/newProduct")}}/>,
-                                        'FormatListNumberedIcon' : <FormatListNumberedIcon onClick={()=> {navigate("/")}}/>,
-                                        'PersonAddIcon' : <PersonAddIcon onClick={()=> {navigate("/")}}/>
+                                        'FormatListNumberedIcon' : <FormatListNumberedIcon onClick={()=> {navigate("/home")}}/>,
+                                        'PersonAddIcon' : <PersonAddIcon onClick={()=> {navigate("/home")}}/>
                                     }[item.icon]
                                 }
 

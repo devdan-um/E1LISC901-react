@@ -3,6 +3,7 @@ import SideNav from './component/SideNav';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import NewProduct from "./component/NewProduct.jsx";
 import ListaProducto from "./component/ListaProducto.jsx";
+import Login from "./component/Login.jsx";
 
 function App() {
 
@@ -10,7 +11,8 @@ function App() {
     <>
       <BrowserRouter>
           <Routes>
-              <Route path="/" exact element={<SideNav/>}></Route>
+              <Route path="/login" exact element={<Login/>}></Route>
+              <Route path="/home" exact element={<SideNav/>}></Route>
               <Route path="/newProduct" exact element={<NewProduct/>}></Route>
               <Route path="/listProducts" exact element={<ListaProducto/>}></Route>
           </Routes>
